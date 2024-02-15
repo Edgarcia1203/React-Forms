@@ -20,13 +20,14 @@ const SignUpForm = ({ setToken }) => {
     const data = await response.json();
     console.log(data);
     } catch (error) {
-      seterror(error.message);
+      setError(error.message);
     }
   };
 
   return (
    <div>
      <h2>Sign Up</h2>
+     {error && <p className="error">{error}</p>}
      <form onSubmit={handleSubmit}>
        <div>
          <label>
