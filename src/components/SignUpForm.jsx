@@ -1,12 +1,13 @@
 // src/components/SignUpForm.jsx
 import React, { useState } from 'react';
 
-const SignUpForm = () => {
+const SignUpForm = ({ setToken }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
   const handleSubmit = async (event) => {
+    setToken(data.token);
     event.preventDefault();
     try {
       const response = await fetch('https://fsa-jwt-practice.herokuapp.com/signup', {
